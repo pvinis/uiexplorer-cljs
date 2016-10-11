@@ -2,6 +2,10 @@
   (:require [reagent.core :as r :refer [atom]]
             [re-frame.core :refer [subscribe dispatch dispatch-sync]]
             [uiexplorer-cljs.title :refer [title]]
+            [uiexplorer-cljs.example-container :refer [example-container]]
+            [uiexplorer-cljs.block :refer [block]]
+            [uiexplorer-cljs.alert-example :refer [simple-alert-example-block]]
+            [uiexplorer-cljs.layout-example :refer [circle circle-block layout-example]]
             [uiexplorer-cljs.events]
             [uiexplorer-cljs.subs]))
 
@@ -22,8 +26,16 @@
   (let [greeting (subscribe [:get-greeting])]
     (fn []
       [view {:style {:flex-direction "column" :margin 40 :align-items "center"}}
-       [text {:style {:font-size 30 :font-weight "100" :margin-bottom 20 :text-align "center"}} @greeting]
        [title "yo"]
+      ;  [example-container {:module "asd"}]
+       [simple-alert-example-block]
+      ;  [circle]
+      ;  [circle-block]
+      ;  [layout-example]
+      ;  [circle]
+       [block {:title "titl"
+              ;  :description "desc"
+               :children [text "a"]}]
        [image {:source logo-img
                :style  {:width 80 :height 80 :margin-bottom 30}}]
        [touchable-highlight {:style {:background-color "#999" :padding 10 :border-radius 5}
