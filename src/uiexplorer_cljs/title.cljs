@@ -11,7 +11,7 @@
                :padding 10
                :background-color "white"}
    :text {:font-size 19
-          :font-weight "500"}});;;;;;;;; 500 or "500"??
+          :font-weight :500}})
 
 (defn title [title]
   [view {:style (styles :container)}
